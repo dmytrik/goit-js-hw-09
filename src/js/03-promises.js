@@ -34,15 +34,13 @@ function reject(result) {
   Notiflix.Notify.failure(result);
 }
 function createPromise(position, delay) {
-  return (promise = new Promise((resolve, reject) => {
+  const promise = new Promise((resolve, reject) => {
     const shouldResolve = Math.random() > 0.3;
-    // shouldResolve
-    //   ? resolve(`✅ Fulfilled promise ${position} in ${delay} ms`)
-    //   : reject(`❌ Rejected promise ${position} in ${delay} ms`);
     setTimeout(() => {
       shouldResolve
         ? resolve(`✅ Fulfilled promise ${position} in ${delay} ms`)
         : reject(`❌ Rejected promise ${position} in ${delay} ms`);
     }, delay);
-  }));
+  });
+  return promise;
 }
