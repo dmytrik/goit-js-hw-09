@@ -28,7 +28,7 @@ function generetePromises(event) {
   // }, countDelay);
 }
 function resolve(result) {
-  Notiflix.Notify.failure(result);
+  Notiflix.Notify.success(result);
 }
 function reject(result) {
   Notiflix.Notify.failure(result);
