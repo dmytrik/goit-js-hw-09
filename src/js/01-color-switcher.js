@@ -1,14 +1,13 @@
 const refs = {
   start: document.querySelector('[data-start]'),
   stop: document.querySelector('[data-stop]'),
-  id: null,
 };
-
+let id = null;
 refs.start.addEventListener('click', colorSwitcher);
 refs.stop.addEventListener('click', switcherStop);
 
 function colorSwitcher() {
-  refs.id = setInterval(changeColor, 1000);
+  id = setInterval(changeColor, 1000);
   refs.start.disabled = true;
   refs.stop.disabled = false;
 }
@@ -21,5 +20,5 @@ function getRandomHexColor() {
 function switcherStop() {
   refs.stop.disabled = true;
   refs.start.disabled = false;
-  clearInterval(refs.id);
+  clearInterval(id);
 }
