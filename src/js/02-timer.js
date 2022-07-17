@@ -34,7 +34,7 @@ class Timer {
       intervalId = setInterval(this.timerGo, 1000, this.selectedDate);
       return;
     }
-    intervalId = setInterval(this.timerGo, 1000, this.selectedDate);
+    intervalId = setInterval(this.timerGo.bind(this), 1000, this.selectedDate);
   }
 
   timerGo(selectedDate) {
