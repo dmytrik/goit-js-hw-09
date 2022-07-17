@@ -31,7 +31,11 @@ class Timer {
       seconds.textContent !== '00'
     ) {
       clearInterval(intervalId);
-      intervalId = setInterval(this.timerGo, 1000, this.selectedDate);
+      intervalId = setInterval(
+        this.timerGo.bind(this),
+        1000,
+        this.selectedDate
+      );
       return;
     }
     intervalId = setInterval(this.timerGo.bind(this), 1000, this.selectedDate);
